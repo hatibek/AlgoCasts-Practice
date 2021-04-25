@@ -9,6 +9,9 @@ function maxChar(str) {
   //every char is a prop and quantity is value
   const charMap = {};
 
+  let max = 0;
+  let maxChar = '';
+
   for (let char of str) {
     if (charMap[char]) {
       //if char exists in the map add 1
@@ -17,6 +20,18 @@ function maxChar(str) {
       //if char does not exist create the prop
       charMap[char] = 1;
     }
+  }
+
+  //objects use 'in'
+  for (let char in charMap) {
+    //a value is larger than the current max
+    if (charMap[char] > max) {
+      //assign the value to max
+      max = charMap[char];
+      //assign the prop to 'char'
+      maxChar = char;
+    }
+    return char;
   }
 }
 
