@@ -8,6 +8,7 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
+//Solution #1 ARRAY FUNCTIONS
 function reverseInt(n) {
   const reversed = n.toString().split('').reverse().join('');
 

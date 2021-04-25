@@ -8,6 +8,18 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+//SOLUTION #1 MAP
+function anagrams(stringA, stringB) {
+  console.log(buildCharMap(stringA, stringB));
+}
+
+//helper func
+function buildCharMap(str) {
+  const charMap = {};
+  for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
+    charMap[char] = charMap[char] + 1 || 1;
+  }
+  return charMap;
+}
 
 module.exports = anagrams;
