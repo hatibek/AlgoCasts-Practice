@@ -10,7 +10,25 @@
 
 //SOLUTION #1 MAP
 function anagrams(stringA, stringB) {
-  console.log(buildCharMap(stringA, stringB));
+  //assignes maps to variables
+  const aCharMap = buildCharMap(stringA);
+  const bCharMap = buildCharMap(stringB);
+
+  //checks the number of props in an object
+  if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+    //returns false if the number of chars don't match
+    return false;
+  }
+
+  //checks if maps have the same props
+  for (let char in aCharMap) {
+    if (aCharMap[char] !== bCharMap[char]) {
+      return false;
+    }
+  }
+
+  //two maps have the same number of props and they are the same
+  return true;
 }
 
 //helper func
