@@ -8,19 +8,29 @@
 // Example:
 //   fib(4) === 3
 
+//SOLUTION RECURSION
 function fib(n) {
-  let fibArr = [0, 1];
-
-  for (let i = 0; i <= fibArr.length; i++) {
-    let total = 0;
-    while (i < n) {
-      total += fibArr[i];
-      fibArr.push(total);
-      i++;
-      console.log(total);
-    }
+  if (n < 2) {
+    return n;
   }
-  console.log('FIB ARRAY', fibArr);
+
+  return fib(n - 1) + fib(n - 2);
 }
 
 module.exports = fib;
+
+//TO BE DEBUGGED
+// function fib(n) {
+//   let fibArr = [0, 1];
+
+//   for (let i = 0; i <= fibArr.length; i++) {
+//     let total = 0;
+//     while (i < n) {
+//       total += fibArr[i];
+//       fibArr.push(total);
+//       i++;
+//       console.log(total);
+//     }
+//   }
+//   console.log(fibArr[n + 2]);
+// }
