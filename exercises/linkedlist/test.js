@@ -281,7 +281,7 @@ describe.skip('ForEach', () => {
     l.insertLast(3);
     l.insertLast(4);
 
-    l.forEach(node => {
+    l.forEach((node) => {
       node.data += 10;
     });
 
